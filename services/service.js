@@ -17,22 +17,23 @@ class Service {
    * @param {String} entity
    */
   constructor(entity) {
-    const urlPrefix = process.env.URL_PREFIX;
-    this.setEntityRequestMap(urlPrefix);
+    const baseURL = process.env.BASE_URL;
+    this.setEntityRequestMap(baseURL);
     this.setEntity(entity);
   }
 
   /**
    * set entity-request map
-   * @param {String} urlPrefix
+   * @param {String} baseURL
    * @function
    */
-  setEntityRequestMap = (urlPrefix) => {
+  setEntityRequestMap = (baseURL) => {
     this.#entityRequestMap = {
-      product: `${urlPrefix}/Product/ProductUpdate`,
-      client: `${urlPrefix}/SupplierClient/SupplierClientUpdate`,
-      inventoryLocation: `${urlPrefix}/InventoryLocation/InventoryLocationUpdate`,
-      tax: `${urlPrefix}/Tax/TaxUpdate`,
+      product: `${baseURL}/Product/ProductUpdate`,
+      client: `${baseURL}/SupplierClient/SupplierClientUpdate`,
+      inventoryLocation: `${baseURL}/InventoryLocation/InventoryLocationUpdate`,
+      tax: `${baseURL}/Tax/TaxUpdate`,
+      discount: `${baseURL}/Discount/DiscountUpdate`,
     };
   };
 
