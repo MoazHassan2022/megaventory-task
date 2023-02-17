@@ -6,7 +6,10 @@ const xss = require("xss-clean");
 const hpp = require("hpp");
 const cors = require("cors");
 const compression = require("compression");
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" });
 const ErrorController = require("./controllers/error-controller");
+const productRouter = require("./routes/product-routes");
 const AppError = require("./utils/app-error");
 
 const app = express();
@@ -67,6 +70,7 @@ app.use("/api", limiter);
 app.use(express.json({ limit: "10kb" }));
 
 // ROUTES
+app.use("/api/products", productRouter);
 app.all("*", (req, res, next) => {
   return next(
     new AppError(`Can't find ${req.originalUrl} on this server`, 404)
