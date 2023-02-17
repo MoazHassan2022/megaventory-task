@@ -6,6 +6,7 @@ const AppError = require("../utils/app-error");
  */
 class Tax {
   // declaring private members
+  #id;
   #name;
   #description;
   #value;
@@ -13,15 +14,26 @@ class Tax {
   /**
    * Tax class constructor
    * @constructor
+   * @param {Number} id
    * @param {String} name
    * @param {String} description
    * @param {Number} value
    */
-  constructor(name, description, value) {
+  constructor(id, name, description, value) {
+    this.setId(id);
     this.setName(name);
     this.setDescription(description);
     this.setValue(value);
   }
+
+  /**
+   * set tax id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
+  };
 
   /**
    * set tax name
@@ -52,6 +64,15 @@ class Tax {
   setValue = (value) => {
     if (!value) throw new AppError("tax value can't be null!", 400);
     this.#value = value;
+  };
+
+  /**
+   * get tax id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
   };
 
   /**

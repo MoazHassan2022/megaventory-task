@@ -16,6 +16,20 @@ const insertTax = catchAsync(async (req, res) => {
   });
 });
 
+/**
+ * edit a tax into your account
+ * @param {function} (req, res)
+ * @returns {Object} res
+ */
+const editTax = catchAsync(async (req, res) => {
+  const updatedTax = await taxServiceInstance.editTax(req.body);
+  return res.status(200).json({
+    status: "success",
+    tax: updatedTax,
+  });
+});
+
 module.exports = {
   insertTax,
+  editTax,
 };
