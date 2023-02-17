@@ -16,6 +16,20 @@ const insertProduct = catchAsync(async (req, res) => {
   });
 });
 
+/**
+ * edit a product in your account
+ * @param {function} (req, res)
+ * @returns {Object} res
+ */
+const editProduct = catchAsync(async (req, res) => {
+  const newProduct = await productServiceInstance.editProduct(req.body);
+  return res.status(200).json({
+    status: "success",
+    product: newProduct,
+  });
+});
+
 module.exports = {
   insertProduct,
+  editProduct,
 };

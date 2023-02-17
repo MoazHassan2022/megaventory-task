@@ -26,7 +26,7 @@ class InventoryLocationService extends Service {
       data.abbreviation,
       data.address
     );
-    const newInventoryLocationRes = await this.insert({
+    const newInventoryLocationRes = await this.update({
       mvInventoryLocation: {
         InventoryLocationName: inventoryLocation.getName(),
         InventoryLocationAbbreviation: inventoryLocation.getAbbreviation(),

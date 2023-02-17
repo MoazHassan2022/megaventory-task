@@ -27,7 +27,7 @@ class ClientService extends Service {
       data.shippingAddress,
       data.phone
     );
-    const newClientRes = await this.insert({
+    const newClientRes = await this.update({
       mvSupplierClient: {
         SupplierClientName: client.getName(),
         SupplierClientEmail: client.getEmail(),

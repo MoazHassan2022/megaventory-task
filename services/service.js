@@ -57,15 +57,13 @@ class Service {
   };
 
   /**
-   * insert a new entity into your Megaventory account
+   * update/insert an entity in your Megaventory account
    * @param {String} entity
    * @function
    */
-  insert = async (data) => {
+  update = async (data) => {
     // add API key in the body
     data.APIKEY = process.env.API_KEY;
-    // define this request as Insert request
-    data.mvRecordAction = "Insert";
     // send a request to Megaventory API request of this entity
     const res = await axios.post(this.#entityRequestMap[this.#entity], data);
     const resStatus = res.data.ResponseStatus;

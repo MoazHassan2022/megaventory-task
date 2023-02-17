@@ -22,7 +22,7 @@ class TaxService extends Service {
    */
   insertTax = async (data) => {
     const tax = new Tax(data.name, data.description, data.value);
-    const newTaxRes = await this.insert({
+    const newTaxRes = await this.update({
       mvTax: {
         TaxName: tax.getName(),
         TaxDescription: tax.getDescription(),

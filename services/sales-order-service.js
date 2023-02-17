@@ -29,7 +29,7 @@ class SalesOrderService extends Service {
       data.discountId,
       data.quantity
     );
-    const newSalesOrderRes = await this.insert({
+    const newSalesOrderRes = await this.update({
       mvSalesOrder: {
         SalesOrderClientId: salesOrder.getClientId(),
         SalesOrderInventoryLocationID: salesOrder.getInventoryLocationId(),

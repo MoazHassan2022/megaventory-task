@@ -6,6 +6,7 @@ const AppError = require("../utils/app-error");
  */
 class Product {
   // declaring private members
+  #id;
   #sku;
   #description;
   #salesPrice;
@@ -14,17 +15,28 @@ class Product {
   /**
    * Product class constructor
    * @constructor
+   * @param {Number} id
    * @param {String} sku
    * @param {String} description
    * @param {Number} salesPrice
    * @param {Number} purchasePrice
    */
-  constructor(sku, description, salesPrice, purchasePrice) {
+  constructor(id, sku, description, salesPrice, purchasePrice) {
+    this.setId(id);
     this.setSKU(sku);
     this.setDescription(description);
     this.setSalesPrice(salesPrice);
     this.setPurchasePrice(purchasePrice);
   }
+
+  /**
+   * set product id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
+  };
 
   /**
    * set product SKU (stock-keeping unit) code
@@ -66,6 +78,15 @@ class Product {
    */
   setPurchasePrice = (purchasePrice) => {
     this.#purchasePrice = purchasePrice;
+  };
+
+  /**
+   * get product id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
   };
 
   /**
