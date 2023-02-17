@@ -18,7 +18,7 @@ const insertInventoryLocation = catchAsync(async (req, res) => {
 });
 
 /**
- * edit an inventory location into your account
+ * edit an inventory location in your account
  * @param {function} (req, res)
  * @returns {Object} res
  */

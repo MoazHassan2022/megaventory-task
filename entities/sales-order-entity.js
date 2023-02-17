@@ -6,6 +6,7 @@ const AppError = require("../utils/app-error");
  */
 class SalesOrder {
   // declaring private members
+  #id;
   #clientId;
   #productSKU;
   #inventoryLocationId;
@@ -16,6 +17,7 @@ class SalesOrder {
   /**
    * SalesOrder class constructor
    * @constructor
+   * @param {Number} id
    * @param {Number} clientId
    * @param {String} productSKU
    * @param {Number} inventoryLocationId
@@ -24,6 +26,7 @@ class SalesOrder {
    * @param {Number} quantity
    */
   constructor(
+    id,
     clientId,
     productSKU,
     inventoryLocationId,
@@ -31,6 +34,7 @@ class SalesOrder {
     discountId,
     quantity
   ) {
+    this.setId(id);
     this.setClientId(clientId);
     this.setProductSKU(productSKU);
     this.setInventoryLocationId(inventoryLocationId);
@@ -49,6 +53,15 @@ class SalesOrder {
     if (!clientId || clientId <= 0)
       throw new AppError("sales order clientId can't be null!", 400);
     this.#clientId = clientId;
+  };
+
+  /**
+   * set sales order id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
   };
 
   /**
@@ -112,6 +125,15 @@ class SalesOrder {
    */
   getClientId = () => {
     return this.#clientId;
+  };
+
+  /**
+   * get sales order id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
   };
 
   /**

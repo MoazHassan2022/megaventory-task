@@ -17,7 +17,7 @@ const insertClient = catchAsync(async (req, res) => {
 });
 
 /**
- * edit a client into your account
+ * edit a client in your account
  * @param {function} (req, res)
  * @returns {Object} res
  */

@@ -17,7 +17,7 @@ const insertTax = catchAsync(async (req, res) => {
 });
 
 /**
- * edit a tax into your account
+ * edit a tax in your account
  * @param {function} (req, res)
  * @returns {Object} res
  */
