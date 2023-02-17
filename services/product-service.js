@@ -43,7 +43,7 @@ class ProductService extends Service {
   /**
    * edits a product in your Megaventory account
    * @param {Object} data
-   * @returns {Product} newProduct
+   * @returns {Product} updatedProduct
    * @function
    */
   editProduct = async (data) => {

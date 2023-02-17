@@ -6,6 +6,7 @@ const AppError = require("../utils/app-error");
  */
 class Client {
   // declaring private members
+  #id;
   #name;
   #email;
   #shippingAddress;
@@ -14,17 +15,28 @@ class Client {
   /**
    * Client class constructor
    * @constructor
+   * @param {Number} id
    * @param {String} name
    * @param {String} email
    * @param {String} shippingAddress
    * @param {String} phone
    */
-  constructor(name, email, shippingAddress, phone) {
+  constructor(id, name, email, shippingAddress, phone) {
+    this.setId(id);
     this.setName(name);
     this.setEmail(email);
     this.setShippingAddress(shippingAddress);
     this.setPhone(phone);
   }
+
+  /**
+   * set client id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
+  };
 
   /**
    * set client name
@@ -63,6 +75,15 @@ class Client {
    */
   setPhone = (phone) => {
     this.#phone = phone;
+  };
+
+  /**
+   * get client id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
   };
 
   /**

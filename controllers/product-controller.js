@@ -22,10 +22,10 @@ const insertProduct = catchAsync(async (req, res) => {
  * @returns {Object} res
  */
 const editProduct = catchAsync(async (req, res) => {
-  const newProduct = await productServiceInstance.editProduct(req.body);
+  const updatedProduct = await productServiceInstance.editProduct(req.body);
   return res.status(200).json({
     status: "success",
-    product: newProduct,
+    product: updatedProduct,
   });
 });
 

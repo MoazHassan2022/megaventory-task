@@ -16,6 +16,20 @@ const insertClient = catchAsync(async (req, res) => {
   });
 });
 
+/**
+ * edit a client into your account
+ * @param {function} (req, res)
+ * @returns {Object} res
+ */
+const editClient = catchAsync(async (req, res) => {
+  const updatedClient = await clientServiceInstance.editClient(req.body);
+  return res.status(200).json({
+    status: "success",
+    client: updatedClient,
+  });
+});
+
 module.exports = {
   insertClient,
+  editClient,
 };
