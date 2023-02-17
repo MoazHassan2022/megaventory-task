@@ -44,9 +44,6 @@ class Client {
    * @function
    */
   setEmail = (email) => {
-    // reject if empty
-    if (!email || email.length === 0)
-      throw new AppError("client email can't be null or empty!", 400);
     this.#email = email;
   };
 

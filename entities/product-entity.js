@@ -44,6 +44,9 @@ class Product {
    * @function
    */
   setDescription = (description) => {
+    // reject if empty
+    if (!description || description.length === 0)
+      throw new AppError("product description can't be null or empty!", 400);
     this.#description = description;
   };
 
