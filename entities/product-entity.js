@@ -40,7 +40,7 @@ class Product {
 
   /**
    * set product description
-   * @param {String} sku
+   * @param {String} description
    * @function
    */
   setDescription = (description) => {

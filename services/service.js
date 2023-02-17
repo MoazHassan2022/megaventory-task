@@ -20,6 +20,7 @@ class Service {
     const urlPrefix = process.env.URL_PREFIX;
     this.#entityRequestMap = {
       product: `${urlPrefix}/Product/ProductUpdate`,
+      client: `${urlPrefix}/SupplierClient/SupplierClientUpdate`,
     };
     this.setEntity(entity);
   }
