@@ -32,6 +32,7 @@ class Service {
       product: `${urlPrefix}/Product/ProductUpdate`,
       client: `${urlPrefix}/SupplierClient/SupplierClientUpdate`,
       inventoryLocation: `${urlPrefix}/InventoryLocation/InventoryLocationUpdate`,
+      tax: `${urlPrefix}/Tax/TaxUpdate`,
     };
   };
 

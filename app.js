@@ -12,6 +12,7 @@ const ErrorController = require("./controllers/error-controller");
 const productRouter = require("./routes/product-routes");
 const clientRouter = require("./routes/client-routes");
 const inventoryLocationRouter = require("./routes/inventory-location-routes");
+const taxRouter = require("./routes/tax-routes");
 const AppError = require("./utils/app-error");
 
 const app = express();
@@ -75,6 +76,7 @@ app.use(express.json({ limit: "10kb" }));
 app.use("/api/products", productRouter);
 app.use("/api/clients", clientRouter);
 app.use("/api/inventory-locations", inventoryLocationRouter);
+app.use("/api/taxes", taxRouter);
 app.all("*", (req, res, next) => {
   return next(
     new AppError(`Can't find ${req.originalUrl} on this server`, 404)
