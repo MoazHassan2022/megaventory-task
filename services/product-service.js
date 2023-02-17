@@ -16,7 +16,7 @@ class ProductService extends Service {
 
   /**
    * creates a product and adds it to your Megaventory account
-   * @param {object} data
+   * @param {Object} data
    * @returns {Product} newProduct
    * @function
    */

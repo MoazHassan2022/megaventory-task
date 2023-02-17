@@ -6,7 +6,7 @@ const inventoryLocationServiceInstance = new InventoryLocationService();
 /**
  * insert an inventory location into your account
  * @param {function} (req, res)
- * @returns {object} res
+ * @returns {Object} res
  */
 const insertInventoryLocation = catchAsync(async (req, res) => {
   const newInventoryLocation =

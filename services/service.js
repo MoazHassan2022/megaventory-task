@@ -18,12 +18,22 @@ class Service {
    */
   constructor(entity) {
     const urlPrefix = process.env.URL_PREFIX;
+    this.setEntityRequestMap(urlPrefix);
+    this.setEntity(entity);
+  }
+
+  /**
+   * set entity-request map
+   * @param {String} urlPrefix
+   * @function
+   */
+  setEntityRequestMap = (urlPrefix) => {
     this.#entityRequestMap = {
       product: `${urlPrefix}/Product/ProductUpdate`,
       client: `${urlPrefix}/SupplierClient/SupplierClientUpdate`,
+      inventoryLocation: `${urlPrefix}/InventoryLocation/InventoryLocationUpdate`,
     };
-    this.setEntity(entity);
-  }
+  };
 
   /**
    * set service entity
