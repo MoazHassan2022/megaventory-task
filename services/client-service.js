@@ -55,7 +55,7 @@ class ClientService extends Service {
     );
     const newClientRes = await this.update({
       mvSupplierClient: {
-        ProductID: client.getId(),
+        SupplierClientId: client.getId(),
         SupplierClientName: client.getName(),
         SupplierClientEmail: client.getEmail(),
         SupplierClientShippingAddress1: client.getShippingAddress(),
