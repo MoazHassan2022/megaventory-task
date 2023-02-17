@@ -16,6 +16,20 @@ const insertDiscount = catchAsync(async (req, res) => {
   });
 });
 
+/**
+ * edit a discount in your account
+ * @param {function} (req, res)
+ * @returns {Object} res
+ */
+const editDiscount = catchAsync(async (req, res) => {
+  const updatedDiscount = await discountServiceInstance.editDiscount(req.body);
+  return res.status(200).json({
+    status: "success",
+    Discount: updatedDiscount,
+  });
+});
+
 module.exports = {
   insertDiscount,
+  editDiscount,
 };
