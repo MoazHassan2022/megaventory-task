@@ -34,6 +34,7 @@ class Service {
       inventoryLocation: `${baseURL}/InventoryLocation/InventoryLocationUpdate`,
       tax: `${baseURL}/Tax/TaxUpdate`,
       discount: `${baseURL}/Discount/DiscountUpdate`,
+      salesOrder: `${baseURL}/SalesOrder/SalesOrderUpdate`,
     };
   };
 

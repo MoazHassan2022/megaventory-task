@@ -14,6 +14,7 @@ const clientRouter = require("./routes/client-routes");
 const inventoryLocationRouter = require("./routes/inventory-location-routes");
 const taxRouter = require("./routes/tax-routes");
 const discountRouter = require("./routes/discount-routes");
+const salesOrderRouter = require("./routes/sales-order-routes");
 const AppError = require("./utils/app-error");
 
 const app = express();
@@ -79,6 +80,7 @@ app.use("/api/clients", clientRouter);
 app.use("/api/inventory-locations", inventoryLocationRouter);
 app.use("/api/taxes", taxRouter);
 app.use("/api/discounts", discountRouter);
+app.use("/api/sales-orders", salesOrderRouter);
 app.all("*", (req, res, next) => {
   return next(
     new AppError(`Can't find ${req.originalUrl} on this server`, 404)
