@@ -7,7 +7,7 @@ const Product = require("../entities/product-entity");
  */
 class ProductService extends Service {
   /**
-   * Product class constructor
+   * Product service class constructor
    * @constructor
    */
   constructor() {

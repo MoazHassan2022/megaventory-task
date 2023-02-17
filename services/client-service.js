@@ -7,7 +7,7 @@ const Client = require("../entities/client-entity");
  */
 class ClientService extends Service {
   /**
-   * Client class constructor
+   * Client service class constructor
    * @constructor
    */
   constructor() {
