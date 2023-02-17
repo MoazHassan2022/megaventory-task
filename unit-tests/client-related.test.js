@@ -39,20 +39,7 @@ describe("testing insertClient service in client service class", () => {
         shippingAddress: "Example 8, Athens",
         phone: "1235698967",
       };
-      axios.post = jest.fn().mockReturnValueOnce({
-        data: {
-          mvSupplierClient: {
-            SupplierClientID: 9,
-            SupplierClientName: "babis",
-            SupplierClientShippingAddress1: "Example 8, Athens",
-            SupplierClientPhone1: "1235698967",
-            SupplierClientEmail: "babis@exampletest.com",
-          },
-          ResponseStatus: {
-            ErrorCode: "0",
-          },
-        },
-      });
+      axios.post = jest.fn().mockReturnValueOnce(null);
       expect(clientServiceInstance.insertClient(data)).rejects.toThrowError();
     });
   });
@@ -97,20 +84,7 @@ describe("testing editClient service in client service class", () => {
         shippingAddress: "Example 8, Cairo",
         phone: "1235698967",
       };
-      axios.post = jest.fn().mockReturnValueOnce({
-        data: {
-          mvSupplierClient: {
-            SupplierClientID: 9,
-            SupplierClientName: "babis",
-            SupplierClientShippingAddress1: "Example 8, Athens",
-            SupplierClientPhone1: "1235698967",
-            SupplierClientEmail: "babis@exampletest.com",
-          },
-          ResponseStatus: {
-            ErrorCode: "0",
-          },
-        },
-      });
+      axios.post = jest.fn().mockReturnValueOnce(null);
       expect(clientServiceInstance.editClient(data)).rejects.toThrowError();
     });
   });
