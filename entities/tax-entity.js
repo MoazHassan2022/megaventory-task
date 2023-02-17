@@ -74,7 +74,7 @@ class Tax {
 
   /**
    * get tax value
-   * @returns {String} value
+   * @returns {Number} value
    * @function
    */
   getValue = () => {
