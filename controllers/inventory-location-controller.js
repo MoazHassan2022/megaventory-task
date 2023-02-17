@@ -17,6 +17,21 @@ const insertInventoryLocation = catchAsync(async (req, res) => {
   });
 });
 
+/**
+ * edit an inventory location into your account
+ * @param {function} (req, res)
+ * @returns {Object} res
+ */
+const editInventoryLocation = catchAsync(async (req, res) => {
+  const updatedInventoryLocation =
+    await inventoryLocationServiceInstance.editInventoryLocation(req.body);
+  return res.status(200).json({
+    status: "success",
+    inventoryLocation: updatedInventoryLocation,
+  });
+});
+
 module.exports = {
   insertInventoryLocation,
+  editInventoryLocation,
 };

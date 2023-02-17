@@ -6,6 +6,7 @@ const AppError = require("../utils/app-error");
  */
 class InventoryLocation {
   // declaring private members
+  #id;
   #name;
   #abbreviation;
   #address;
@@ -13,15 +14,26 @@ class InventoryLocation {
   /**
    * InventoryLocation class constructor
    * @constructor
+   * @param {Number} id
    * @param {String} name
    * @param {String} abbreviation
    * @param {String} address
    */
-  constructor(name, abbreviation, address) {
+  constructor(id, name, abbreviation, address) {
+    this.setId(id);
     this.setName(name);
     this.setAbbreviation(abbreviation);
     this.setAddress(address);
   }
+
+  /**
+   * set inventory location id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
+  };
 
   /**
    * set inventory location name
@@ -60,6 +72,15 @@ class InventoryLocation {
    */
   setAddress = (address) => {
     this.#address = address;
+  };
+
+  /**
+   * get inventory location id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
   };
 
   /**

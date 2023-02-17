@@ -4,5 +4,6 @@ const inventoryLocationController = require("../controllers/inventory-location-c
 const router = express.Router();
 
 router.post("/", inventoryLocationController.insertInventoryLocation);
+router.patch("/", inventoryLocationController.editInventoryLocation);
 
 module.exports = router;

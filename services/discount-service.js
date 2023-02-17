@@ -21,7 +21,12 @@ class DiscountService extends Service {
    * @function
    */
   insertDiscount = async (data) => {
-    const discount = new Discount(data.name, data.description, data.value);
+    const discount = new Discount(
+      null,
+      data.name,
+      data.description,
+      data.value
+    );
     const newDiscountRes = await this.update({
       mvDiscount: {
         DiscountName: discount.getName(),

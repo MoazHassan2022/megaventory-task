@@ -22,6 +22,7 @@ class ClientService extends Service {
    */
   insertClient = async (data) => {
     const client = new Client(
+      null,
       data.name,
       data.email,
       data.shippingAddress,

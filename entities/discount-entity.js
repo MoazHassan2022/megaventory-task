@@ -28,7 +28,7 @@ class Discount {
 
   /**
    * set discount name
-   * @param {String} name
+   * @param {Number} id
    * @function
    */
   setId = (id) => {
@@ -68,7 +68,7 @@ class Discount {
 
   /**
    * get discount id
-   * @returns {String} id
+   * @returns {Number} id
    * @function
    */
   getId = () => {

@@ -22,6 +22,7 @@ class InventoryLocationService extends Service {
    */
   insertInventoryLocation = async (data) => {
     const inventoryLocation = new InventoryLocation(
+      null,
       data.name,
       data.abbreviation,
       data.address
@@ -32,8 +33,34 @@ class InventoryLocationService extends Service {
         InventoryLocationAbbreviation: inventoryLocation.getAbbreviation(),
         InventoryLocationAddress: inventoryLocation.getAddress(),
       },
+      mvRecordAction: "Insert",
     });
     return newInventoryLocationRes;
+  };
+
+  /**
+   * edites an inventory location in your Megaventory account
+   * @param {Object} data
+   * @returns {InventoryLocation} updatedInventoryLocation
+   * @function
+   */
+  editInventoryLocation = async (data) => {
+    const inventoryLocation = new InventoryLocation(
+      data.id,
+      data.name,
+      data.abbreviation,
+      data.address
+    );
+    const updatedInventoryLocationRes = await this.update({
+      mvInventoryLocation: {
+        InventoryLocationId: inventoryLocation.getId(),
+        InventoryLocationName: inventoryLocation.getName(),
+        InventoryLocationAbbreviation: inventoryLocation.getAbbreviation(),
+        InventoryLocationAddress: inventoryLocation.getAddress(),
+      },
+      mvRecordAction: "Update",
+    });
+    return updatedInventoryLocationRes;
   };
 }
 
