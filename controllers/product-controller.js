@@ -6,7 +6,7 @@ const productServiceInstance = new ProductService();
 /**
  * insert a product into your account
  * @param {function} (req, res)
- * @returns {object} res
+ * @returns {Object} res
  */
 const insertProduct = catchAsync(async (req, res) => {
   const newProduct = await productServiceInstance.insertProduct(req.body);

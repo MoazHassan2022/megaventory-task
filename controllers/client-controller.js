@@ -6,7 +6,7 @@ const clientServiceInstance = new ClientService();
 /**
  * insert a client into your account
  * @param {function} (req, res)
- * @returns {object} res
+ * @returns {Object} res
  */
 const insertClient = catchAsync(async (req, res) => {
   const newClient = await clientServiceInstance.insertClient(req.body);

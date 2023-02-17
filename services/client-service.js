@@ -16,7 +16,7 @@ class ClientService extends Service {
 
   /**
    * creates a client and adds it to your Megaventory account
-   * @param {object} data
+   * @param {Object} data
    * @returns {Client} newClient
    * @function
    */

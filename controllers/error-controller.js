@@ -9,10 +9,10 @@ class ErrorController {
 
   /**
    * Handles errors in development
-   * @param {object} req
-   * @param {object} res
+   * @param {Object} req
+   * @param {Object} res
    * @param {function} next
-   * @returns {object} res
+   * @returns {Object} res
    */
   sendErrorDev = (req, res, err) => {
     return res.status(err.statusCode).json({
@@ -25,10 +25,10 @@ class ErrorController {
 
   /**
    * Handles errors in production
-   * @param {object} req
-   * @param {object} res
+   * @param {Object} req
+   * @param {Object} res
    * @param {function} next
-   * @returns {object} res
+   * @returns {Object} res
    */
   sendErrorProd = (req, res, err) => {
     if (err.isOperational) {
@@ -47,11 +47,11 @@ class ErrorController {
   /* eslint-disable */
   /**
    * Handles some errors
-   * @param {object} err
-   * @param {object} req
-   * @param {object} res
+   * @param {Object} err
+   * @param {Object} req
+   * @param {Object} res
    * @param {function} next
-   * @returns {object} res
+   * @returns {Object} res
    */
   globalErrorHandler = (err, req, res, next) => {
     err.statusCode = err.statusCode || 500;

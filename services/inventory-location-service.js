@@ -16,7 +16,7 @@ class InventoryLocationService extends Service {
 
   /**
    * creates an inventory location and adds it to your Megaventory account
-   * @param {object} data
+   * @param {Object} data
    * @returns {InventoryLocation} newInventoryLocation
    * @function
    */
