@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: entities/sales-order-entity.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: entities/sales-order-entity.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const AppError = require("../utils/app-error");
+
+/**
+ * salesOrder class to represent SalesOrder entity.
+ * @class SalesOrder
+ */
+class SalesOrder {
+  // declaring private members
+  #id;
+  #clientId;
+  #productSKU;
+  #inventoryLocationId;
+  #taxId;
+  #discountId;
+  #quantity;
+
+  /**
+   * SalesOrder class constructor
+   * @constructor
+   * @param {Number} id
+   * @param {Number} clientId
+   * @param {String} productSKU
+   * @param {Number} inventoryLocationId
+   * @param {Number} taxId
+   * @param {Number} discountId
+   * @param {Number} quantity
+   */
+  constructor(
+    id,
+    clientId,
+    productSKU,
+    inventoryLocationId,
+    taxId,
+    discountId,
+    quantity
+  ) {
+    this.setId(id);
+    this.setClientId(clientId);
+    this.setProductSKU(productSKU);
+    this.setInventoryLocationId(inventoryLocationId);
+    this.setTaxId(taxId);
+    this.setDiscountId(discountId);
+    this.setQuantity(quantity);
+  }
+
+  /**
+   * set sales order clientId
+   * @param {Number} clientId
+   * @function
+   */
+  setClientId = (clientId) => {
+    // reject if null
+    if (!clientId || clientId &lt;= 0)
+      throw new AppError("sales order clientId can't be null!", 400);
+    this.#clientId = clientId;
+  };
+
+  /**
+   * set sales order id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
+  };
+
+  /**
+   * set sales order productSKU
+   * @param {String} productSKU
+   * @function
+   */
+  setProductSKU = (productSKU) => {
+    // reject if null
+    if (!productSKU || productSKU.length === 0)
+      throw new AppError("sales order productSKU can't be null or empty!", 400);
+    this.#productSKU = productSKU;
+  };
+
+  /**
+   * set sales order inventoryLocationId
+   * @param {Number} inventoryLocationId
+   * @function
+   */
+  setInventoryLocationId = (inventoryLocationId) => {
+    // reject if null
+    if (!inventoryLocationId || inventoryLocationId &lt;= 0)
+      throw new AppError("sales order inventoryLocationId can't be null!", 400);
+    this.#inventoryLocationId = inventoryLocationId;
+  };
+
+  /**
+   * set sales order taxId
+   * @param {Number} taxId
+   * @function
+   */
+  setTaxId = (taxId) => {
+    this.#taxId = taxId;
+  };
+
+  /**
+   * set sales order discountId
+   * @param {Number} discountId
+   * @function
+   */
+  setDiscountId = (discountId) => {
+    this.#discountId = discountId;
+  };
+
+  /**
+   * set sales order quantity
+   * @param {Number} quantity
+   * @function
+   */
+  setQuantity = (quantity) => {
+    // reject if null
+    if (!quantity || quantity &lt;= 0)
+      throw new AppError("sales order quantity can't be null!", 400);
+    this.#quantity = quantity;
+  };
+
+  /**
+   * get sales order clientId
+   * @returns {Number} clientId
+   * @function
+   */
+  getClientId = () => {
+    return this.#clientId;
+  };
+
+  /**
+   * get sales order id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
+  };
+
+  /**
+   * get sales order productSKU
+   * @returns {String} productSKU
+   * @function
+   */
+  getProductSKU = () => {
+    return this.#productSKU;
+  };
+
+  /**
+   * get sales order inventoryLocationId
+   * @returns {Number} inventoryLocationId
+   * @function
+   */
+  getInventoryLocationId = () => {
+    return this.#inventoryLocationId;
+  };
+
+  /**
+   * get sales order taxId
+   * @returns {Number} taxId
+   * @function
+   */
+  getTaxId = () => {
+    return this.#taxId;
+  };
+
+  /**
+   * get sales order discountId
+   * @returns {Number} discountId
+   * @function
+   */
+  getDiscountId = () => {
+    return this.#discountId;
+  };
+
+  /**
+   * get sales order quantity
+   * @returns {Number} quantity
+   * @function
+   */
+  getQuantity = () => {
+    return this.#quantity;
+  };
+}
+module.exports = SalesOrder;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="AppError.html">AppError</a></li><li><a href="ErrorController.html">ErrorController</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="ClientService.html">ClientService</a></li><li><a href="Discount.html">Discount</a></li><li><a href="DiscountService.html">DiscountService</a></li><li><a href="InventoryLocation.html">InventoryLocation</a></li><li><a href="InventoryLocationService.html">InventoryLocationService</a></li><li><a href="Product.html">Product</a></li><li><a href="ProductService.html">ProductService</a></li><li><a href="SalesOrder.html">SalesOrder</a></li><li><a href="SalesOrderService.html">SalesOrderService</a></li><li><a href="Service.html">Service</a></li><li><a href="Tax.html">Tax</a></li><li><a href="TaxService.html">TaxService</a></li></ul><h3>Global</h3><ul><li><a href="global.html#editClient">editClient</a></li><li><a href="global.html#editDiscount">editDiscount</a></li><li><a href="global.html#editInventoryLocation">editInventoryLocation</a></li><li><a href="global.html#editProduct">editProduct</a></li><li><a href="global.html#editSalesOrder">editSalesOrder</a></li><li><a href="global.html#editTax">editTax</a></li><li><a href="global.html#insertClient">insertClient</a></li><li><a href="global.html#insertDiscount">insertDiscount</a></li><li><a href="global.html#insertInventoryLocation">insertInventoryLocation</a></li><li><a href="global.html#insertProduct">insertProduct</a></li><li><a href="global.html#insertSalesOrder">insertSalesOrder</a></li><li><a href="global.html#insertTax">insertTax</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Feb 18 2023 02:55:09 GMT+0200 (Eastern European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

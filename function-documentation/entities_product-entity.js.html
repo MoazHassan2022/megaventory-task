@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: entities/product-entity.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: entities/product-entity.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const AppError = require("../utils/app-error");
+
+/**
+ * Product class to represent Product entity.
+ * @class Product
+ */
+class Product {
+  // declaring private members
+  #id;
+  #sku;
+  #description;
+  #salesPrice;
+  #purchasePrice;
+
+  /**
+   * Product class constructor
+   * @constructor
+   * @param {Number} id
+   * @param {String} sku
+   * @param {String} description
+   * @param {Number} salesPrice
+   * @param {Number} purchasePrice
+   */
+  constructor(id, sku, description, salesPrice, purchasePrice) {
+    this.setId(id);
+    this.setSKU(sku);
+    this.setDescription(description);
+    this.setSalesPrice(salesPrice);
+    this.setPurchasePrice(purchasePrice);
+  }
+
+  /**
+   * set product id
+   * @param {Number} id
+   * @function
+   */
+  setId = (id) => {
+    this.#id = id;
+  };
+
+  /**
+   * set product SKU (stock-keeping unit) code
+   * @param {String} sku
+   * @function
+   */
+  setSKU = (sku) => {
+    // reject if empty
+    if (!sku || sku.length === 0)
+      throw new AppError("product SKU can't be null or empty!", 400);
+    this.#sku = sku;
+  };
+
+  /**
+   * set product description
+   * @param {String} description
+   * @function
+   */
+  setDescription = (description) => {
+    // reject if empty
+    if (!description || description.length === 0)
+      throw new AppError("product description can't be null or empty!", 400);
+    this.#description = description;
+  };
+
+  /**
+   * set product sales price
+   * @param {Number} salesPrice
+   * @function
+   */
+  setSalesPrice = (salesPrice) => {
+    this.#salesPrice = salesPrice;
+  };
+
+  /**
+   * set product purchase price
+   * @param {Number} purchasePrice
+   * @function
+   */
+  setPurchasePrice = (purchasePrice) => {
+    this.#purchasePrice = purchasePrice;
+  };
+
+  /**
+   * get product id
+   * @returns {Number} id
+   * @function
+   */
+  getId = () => {
+    return this.#id;
+  };
+
+  /**
+   * get product SKU (stock-keeping unit) code
+   * @returns {String} SKU
+   * @function
+   */
+  getSKU = () => {
+    return this.#sku;
+  };
+
+  /**
+   * get product description
+   * @returns {String} description
+   * @function
+   */
+  getDescription = () => {
+    return this.#description;
+  };
+
+  /**
+   * get product sales price
+   * @returns {Number} salesPrice
+   * @function
+   */
+  getSalesPrice = () => {
+    return this.#salesPrice;
+  };
+
+  /**
+   * get product purchase price
+   * @returns {Number} purchasePrice
+   * @function
+   */
+  getPurchasePrice = () => {
+    return this.#purchasePrice;
+  };
+}
+module.exports = Product;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="AppError.html">AppError</a></li><li><a href="ErrorController.html">ErrorController</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li><li><a href="ClientService.html">ClientService</a></li><li><a href="Discount.html">Discount</a></li><li><a href="DiscountService.html">DiscountService</a></li><li><a href="InventoryLocation.html">InventoryLocation</a></li><li><a href="InventoryLocationService.html">InventoryLocationService</a></li><li><a href="Product.html">Product</a></li><li><a href="ProductService.html">ProductService</a></li><li><a href="SalesOrder.html">SalesOrder</a></li><li><a href="SalesOrderService.html">SalesOrderService</a></li><li><a href="Service.html">Service</a></li><li><a href="Tax.html">Tax</a></li><li><a href="TaxService.html">TaxService</a></li></ul><h3>Global</h3><ul><li><a href="global.html#editClient">editClient</a></li><li><a href="global.html#editDiscount">editDiscount</a></li><li><a href="global.html#editInventoryLocation">editInventoryLocation</a></li><li><a href="global.html#editProduct">editProduct</a></li><li><a href="global.html#editSalesOrder">editSalesOrder</a></li><li><a href="global.html#editTax">editTax</a></li><li><a href="global.html#insertClient">insertClient</a></li><li><a href="global.html#insertDiscount">insertDiscount</a></li><li><a href="global.html#insertInventoryLocation">insertInventoryLocation</a></li><li><a href="global.html#insertProduct">insertProduct</a></li><li><a href="global.html#insertSalesOrder">insertSalesOrder</a></li><li><a href="global.html#insertTax">insertTax</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Feb 18 2023 02:55:09 GMT+0200 (Eastern European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
