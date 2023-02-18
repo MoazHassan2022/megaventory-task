@@ -7,12 +7,12 @@
 <h2>Table of Contents</h2>
 <ul>
   <li><a href="#Description">Description</a></li>
-  <li><a href="#built-with--">Built With</a></li>
+  <li><a href="#built-with-">Built With</a></li>
   <li><a href="#getting-started">Getting Started</a></li>
-  <li><a href="#Relation">Relation with older project</a></li>
-  <li><a href="#swagger-api-documentation--">Swagger API Documentation</a></li>
-  <li><a href="#postman-collection--">Postman Collection</a></li>
-  <li><a href="#function-documentation--">Function documentation</a></li>
+  <li><a href="#relation-with-older-project">Relation with older project</a></li>
+  <li><a href="#swagger-api-documentation">Swagger API Documentation</a></li>
+  <li><a href="#postman-collection">Postman Collection</a></li>
+  <li><a href="#function-documentation">Function Documentation</a></li>
 </ul>
 
 <h2 href="#Description">Description</h2>
@@ -59,7 +59,7 @@
 
  <h2 href="#Relation">Relation with older project</h2>
 <blockquote>
-  <p>There is a relation between this project and an older project called <a href="https://www.megaventory.com/">RedditX</a>, that I nearly followed the same project architecture (<code>Controller</code> => <code>Service</code> => <code>Entity</code> or <code>Model</code>), <br> that is, <code>Service</code> is responsible for handling dealing with database or with requesting external service, <br> and <code>Controller</code> is reponsible for handling requests and providing data for services,<br> and <code>Entity</code> or <code>Model</code> is responsible for representing the business logic, <br> and finally if there is need for something like emails, then <code>View</code> is reposnsible for building this email's view for example.
+  <p>There is a relation between this project and an older project called <a href="https://github.com/MoazHassan2022/RedditX-Backend">RedditX</a>, that I nearly followed the same project architecture (<code>Controller</code> => <code>Service</code> => <code>Entity</code> or <code>Model</code>), <br> that is, <code>Service</code> is responsible for handling dealing with database or with requesting external service, <br> and <code>Controller</code> is reponsible for handling requests and providing data for services,<br> and <code>Entity</code> or <code>Model</code> is responsible for representing the business logic, <br> and finally if there is need for something like emails, then <code>View</code> is reposnsible for building this email's view for example.
  </p>
 </blockquote>
 
