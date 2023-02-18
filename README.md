@@ -1,7 +1,7 @@
 # megaventory-task
 
 <div align="center">
-<img src="./images/logo.png" alt="Megaventory" border="0">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Megaventory_logo.png" alt="Megaventory" border="0">
 </div>
 
 <h2>Table of Contents</h2>
