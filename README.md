@@ -66,7 +66,7 @@
 <h2 href="#SwaggerAPIDocumentation">Swagger API Documentation</h2>
 <blockquote>
   <p>
-  You can look on the Swagger API documentation at <a href="https://app.swaggerhub.com/apis/MOAZ25JAN2015_1/Megaventory/1.0.0#/">API Documentation</a>
+  You can look on the Swagger API documentation at <a href="https://app.swaggerhub.com/apis-docs/MOAZ25JAN2015_1/Megaventory/1.0.0#/">API Documentation</a>
   </p>
 </blockquote>
 
